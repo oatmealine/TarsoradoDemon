@@ -2,6 +2,7 @@
 #include <Geode/modify/LevelBrowserLayer.hpp>
 #include "ListManager.h"
 
+/*
 class $modify(GrDLevelBrowserLayer, LevelBrowserLayer) {
     int m_currentPage = 0;
     int m_furthestLoadedPage = 0;
@@ -23,7 +24,8 @@ class $modify(GrDLevelBrowserLayer, LevelBrowserLayer) {
         int page = this->m_fields->m_currentPage;
         this->m_fields->m_lowIdx = page * 10;
 
-        LevelBrowserLayer::init(ListManager::getSearchObject(499, 489));
+        //LevelBrowserLayer::init(ListManager::getSearchObject(499, 489));
+        LevelBrowserLayer::init(p0);
         return true;
     }
 
@@ -57,9 +59,9 @@ class $modify(GrDLevelBrowserLayer, LevelBrowserLayer) {
 
         if (this->m_fields->m_currentPage <= 0) {
             prevBtn->setVisible(false);
-        } else if (this->m_fields->m_currentPage >= 24) {
-            nextBtn->setVisible(false);
-        }
+        }// else if (this->m_fields->m_currentPage >= 24) {
+        //    nextBtn->setVisible(false);
+        //}
     }
 
     void onNextPage(CCObject* sender) {
@@ -71,9 +73,9 @@ class $modify(GrDLevelBrowserLayer, LevelBrowserLayer) {
             return;
         }
 
-        if (this->m_fields->m_currentPage < 24) {
+        //if (this->m_fields->m_currentPage < 24) {
             this->m_fields->m_currentPage += 1;
-        }
+        //}
         nextBtnActions();
         
     }
@@ -104,3 +106,4 @@ class $modify(GrDLevelBrowserLayer, LevelBrowserLayer) {
     }
 };
 
+*/

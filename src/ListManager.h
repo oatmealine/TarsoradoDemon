@@ -2,6 +2,7 @@
 #define LISTMANAGER_H
 #include <algorithm>
 #include <cstddef>
+#include <tuple>
 #include <vector>
 #include <string>
 
@@ -52,10 +53,12 @@ class ListManager {
                 index = 18;
             } else if (pos < 50) {
                 index = 17;
-            } else if (pos < 150) {
+            } else if (pos < 100) {
                 index = 16;
+            } else if (pos < 150) {
+                index = 15;
             } else {
-                index = static_cast<int>((16 - (div * 17)) - 0.5);
+                index = static_cast<int>(15 - (div * 16) + 1) - 1;
             }
 
             if (index <= 0) return nullptr;
@@ -65,6 +68,20 @@ class ListManager {
 
             std::string spriteName = "GrD_demon" + std::to_string(index) + (hasText ? "_text" : "") + ".png";
             return CCSprite::createWithSpriteFrameName(geode::Mod::get()->expandSpriteName(spriteName.c_str()));
+        }
+        inline static std::tuple<int, int> getRange(int index) {
+            if (index == 20) return {0, 0};
+            if (index == 19) return {1, 9};
+            if (index == 18) return {10, 24};
+            if (index == 17) return {25, 49};
+            if (index == 16) return {50, 99};
+            if (index == 15) return {100, 149};
+
+            float divMax = (15.f - index) / 16.f;
+            float divMin = (15.f - (index + 1)) / 16.f;
+            int size = demonIDList.size() - 150;
+
+            return {divMin * size + 150, divMax * size - 1 + 150};
         }
 
         inline static GJSearchObject* getSearchObject(int upper, int lower) {
