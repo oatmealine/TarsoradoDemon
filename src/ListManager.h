@@ -55,11 +55,12 @@ class ListManager {
             } else if (pos < 150) {
                 index = 16;
             } else {
-                index = static_cast<int>((15 - (div * 16)) - 0.5);
+                index = static_cast<int>((16 - (div * 17)) - 0.5);
             }
 
             if (index <= 0) return nullptr;
 
+            // just in case
             index = std::clamp(index, 0, 20);
 
             std::string spriteName = "GrD_demon" + std::to_string(index) + (hasText ? "_text" : "") + ".png";
