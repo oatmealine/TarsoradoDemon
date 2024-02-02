@@ -1,7 +1,10 @@
 {
 	"geode": "2.0.0",
 	"version": "v1.0.0",
-	"gd": "2.204",
+	"gd": {
+		"win": "2.204",
+		"android": "2.200"
+	},
 	"id": "oatmealine.tarsorado_demon",
 	"name": "Tarsorado Demon",
 	"developer": "oatmealine",
