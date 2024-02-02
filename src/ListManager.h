@@ -1,5 +1,7 @@
 #ifndef LISTMANAGER_H
 #define LISTMANAGER_H
+#include <algorithm>
+#include <cstddef>
 #include <vector>
 #include <string>
 
@@ -34,64 +36,34 @@ class ListManager {
             return -1;
         }
 
+        // returns null if no sprite found
         inline static CCSprite* getSpriteFromPosition(int pos, bool hasText) {
-            if (pos <= 499 &&
-                pos > 249) {
-                    if (hasText) {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon0_text.png"_spr);
-                    } else {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon0.png"_spr);
-                    }
-                }
+            if (pos == -1) return nullptr;
 
-            if (pos <= 249 &&
-                pos > 149) {
-                    if (hasText) {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon1_text.png"_spr);
-                    } else {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon1.png"_spr);
-                    }
-                }
+            float div = (float) (pos - 150) / (float) (demonIDList.size() - 150);
 
-            if (pos <= 149 &&
-                pos > 74) {
-                    if (hasText) {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon2_text.png"_spr);
-                    } else {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon2.png"_spr);
-                    }
-                }
-            if (pos <= 74 &&
-                pos > 24) {
-                    if (hasText) {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon3_text.png"_spr);
-                    } else {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon3.png"_spr);
-                    }
-                }
-            if (pos <= 24 &&
-                pos > 0) {
-                    if (hasText) {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon4_text.png"_spr);
-                    } else {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon4.png"_spr);
-                    }
-                }
+            int index = 0;
+            
             if (pos == 0) {
-                if ((Mod::get()->getSettingValue<bool>("grandpa-demon-disable"))) {
-                    if (hasText) {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon4_text.png"_spr);
-                    } else {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon4.png"_spr);
-                    }
-                } else {
-                    if (hasText) {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon5_text.png"_spr);
-                    } else {
-                        return CCSprite::createWithSpriteFrameName("GrD_demon5.png"_spr);
-                    }
-                }
-            } 
+                index = 20;
+            } else if (pos < 10) {
+                index = 19;
+            } else if (pos < 25) {
+                index = 18;
+            } else if (pos < 50) {
+                index = 17;
+            } else if (pos < 150) {
+                index = 16;
+            } else {
+                index = static_cast<int>((15 - (div * 16)) - 0.5);
+            }
+
+            if (index <= 0) return nullptr;
+
+            index = std::clamp(index, 0, 20);
+
+            std::string spriteName = "GrD_demon" + std::to_string(index) + (hasText ? "_text" : "") + ".png";
+            return CCSprite::createWithSpriteFrameName(geode::Mod::get()->expandSpriteName(spriteName.c_str()));
         }
 
         inline static GJSearchObject* getSearchObject(int upper, int lower) {

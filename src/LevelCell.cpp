@@ -1,7 +1,6 @@
 #include <Geode/Bindings.hpp>
 #include <Geode/modify/LevelCell.hpp>
 #include "ListManager.h"
-#include "EffectsManager.h"
 
 using namespace geode::prelude;
 
@@ -20,9 +19,6 @@ class $modify(LevelCell) {
         }
 
         int aredlPos = ListManager::getPositionOfID(m_level->m_levelID);
-        if (aredlPos == -1 || aredlPos > 499) {
-            return;
-        }
 
         CCSprite* originalIcon = nullptr;
 
@@ -49,6 +45,8 @@ class $modify(LevelCell) {
         }
 
         CCSprite* newIcon = ListManager::getSpriteFromPosition(aredlPos, false);
+        if (newIcon == nullptr) return;
+
         //CCSprite* newIcon = CCSprite::createWithSpriteFrameName("GrD_demon0.png"_spr);
         auto layer = m_mainLayer->getChildByID("grd-demon-icon-layer");
 
@@ -77,9 +75,5 @@ class $modify(LevelCell) {
         originalIcon->setVisible(false);
 
         layer->addChild(newIcon);
-
-        if (aredlPos <= 24) {
-            EffectsManager::addInfinitySymbol(newIcon->getPosition(), layer, aredlPos);
-        }
     }
 };

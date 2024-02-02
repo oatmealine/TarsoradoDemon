@@ -3,7 +3,6 @@
 #include <Geode/modify/LevelInfoLayer.hpp>
 #include <Geode/utils/web.hpp>
 #include "ListManager.h"
-#include "EffectsManager.h"
 #include <string>
 #include <vector>
 using namespace geode::prelude;

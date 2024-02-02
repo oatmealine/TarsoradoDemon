@@ -3,8 +3,6 @@
 #include <vector>
 #include <string>
 #include "ListManager.h"
-#include "EffectsManager.h"
-#include "ParticleManager.h"
 
 using namespace geode::prelude;
 
@@ -14,9 +12,6 @@ class $modify(GrDInfoLayer, LevelInfoLayer) {
     void updateDifficultyFace() {
 
         int aredlPos = ListManager::getPositionOfID(m_level->m_levelID);
-        if (aredlPos == -1 || aredlPos > 499) {
-            return;
-        }
 
         // Get the original difficulty icon
         CCSprite* originalIcon = nullptr;
@@ -49,6 +44,8 @@ class $modify(GrDInfoLayer, LevelInfoLayer) {
         }
 
         CCSprite* newIcon = ListManager::getSpriteFromPosition(aredlPos, true);
+        if (newIcon == nullptr) return;
+
         //CCSprite* newIcon = CCSprite::createWithSpriteFrameName("GrD_demon0_text.png"_spr);
         newIcon->setID("grd-difficulty");
         
@@ -83,50 +80,6 @@ class $modify(GrDInfoLayer, LevelInfoLayer) {
             return;
         }
 
-        if (aredlPos <= 24) {
-            EffectsManager::infinityBackground(this, aredlPos);
-            EffectsManager::addInfinitySymbol(newIcon->getPosition(), this, aredlPos);
-
-            if (!Mod::get()->getSettingValue<bool>("particles-disable")) {
-                bool isGrandpa = false;
-
-                if (aredlPos == 0 && !Mod::get()->getSettingValue<bool>("grandpa-demon-disable")) {
-                    isGrandpa = true;
-                }
-
-                auto particle1 = ParticleManager::infiniteParticles1(50, isGrandpa);
-                particle1->setPosition({newIcon->getPositionX(), newIcon->getPositionY() + 5.f});
-                this->addChild(particle1);
-
-                auto particle2 = ParticleManager::infiniteParticles2(50);
-                particle2->setPosition({newIcon->getPositionX(), newIcon->getPositionY() + 5.f});
-                this->addChild(particle2);
-            }
-
-        }
-
-        if (aredlPos <= 74 && aredlPos > 24) {
-            EffectsManager::mythicalBackground(this, aredlPos);
-
-            if (!Mod::get()->getSettingValue<bool>("particles-disable")) {
-                auto particle = ParticleManager::mythicalParticles(50);
-                particle->setPosition({newIcon->getPositionX(), newIcon->getPositionY() + 5.f});
-                this->addChild(particle);
-            }
-            
-        }
-
-        if (aredlPos <= 149 && aredlPos > 74) {
-            EffectsManager::legendaryBackground(this, aredlPos);
-
-            if (!Mod::get()->getSettingValue<bool>("particles-disable")) {
-                auto particle = ParticleManager::legendaryParticles(50);
-                particle->setPosition({newIcon->getPositionX(), newIcon->getPositionY() + 5.f});
-                this->addChild(particle);
-            }
-      
-        }
-        
         m_fields->m_hasBeenOpened = true;
         return;
     }
