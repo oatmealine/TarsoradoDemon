@@ -1,31 +1,21 @@
-# <cy>Grandpa Demon</c>
-<cj>A mod created by ItzKiba.</c>
+# Tarsorado Demon
 
-## Overview
-The humble Extreme Demon is the highest difficulty in all of Geometry Dash. **<cr>However, there is no possible way that Acheron and ACU should be considered the same difficulty.</c>** Think that there should be more demon difficulties above Extreme? Look no further than the **<cl>Grandpa Demon mod!</c>**
+A fork of ItzKiba's **Grandpa Demon** mod, but with 21 extra demon difficulties instead of 5, covering almost the entire spectrum of the original demon difficulty image.
 
-## Features
-* *<cg>Up to 6 new demon difficulties</c>* above Extreme Demon!
-* *<cr>All Rated Extremes Demon List</c>* integration!
-* *<cy>2.2 List support!</c>*
-* ***<cl>Grandpa Demon!</c>***
+![](oatmealine.tarsorado_demon/filter.png)
 
+These are similarly based on [AREDL](https://aredl.pages.dev/#/):
 
-*Additionally, the highest demon difficulties each have their own **<cj>animated backgrounds</c>** and **<cg>particles</c>** for the level page!*
+* Top 1 - Final Boss
+* Top 10 - Infinite Demon
+* Top 25 - Ultra Demon
+* Top 50 - Super Demon
+* Top 100 - Mega Demon
+* Top 150 - Golden Demon
 
-## New Demon Difficulties
-The difficulties of extreme demons are chosen based on their positions on the [AREDL](https://aredl.pages.dev/#/).
-
-* Top 500 Demons - *<co>Supreme Demon</c>*
-* Top 250 Demons - *<cp>Ultimate Demon</c>*
-* Top 150 Demons - *<cj>Legendary Demon</c>*
-* Top 75 Demons - *<cl>Mythical Demon</c>*
-* Top 25 Demons - *<cy>Infinite Demon</c>*
-* Top 1 Demon - *<cr>Grandpa Demon</c>*
-
-***Note:** Grandpa Demon is optional and can be disabled in the mod's settings.*
+The rest is equally distributed across the AREDL rankings, meaning each difficulty will have roughly the same amount of demons (~50 as of writing this).
 
 ## Credits
-* **<cg>tcoffa</c>** for creating the original Grandpa Demon sprite
-* **<cp>Geode's Discord</c>** for answering my stupid questions
-* **<co>AeonAir</c>** for making me do this out of spite in the first place
+
+* [ItzKiba's Grandpa Demon mod](https://github.com/ItzKiba/GrandpaDemon) for most of the code used
+* [tcoffa's original demon filter image](https://twitter.com/tcoffaVEVO5/status/1738193220188672085) for, well. You know

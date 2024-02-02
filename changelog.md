@@ -1,8 +1,3 @@
-# v1.1.0
+# v1.0.0
 
-* Added Instant Search feature for custom demon difficulty types.
-* Added particles to Legendary, Mythical, and Infinite Demon level info pages (can be disabled in Mod settings)
-
-# v1.0.1
-
-* Initial Release
+Initial release, based on [b49e141](https://github.com/ItzKiba/GrandpaDemon/commit/b49e141197f1ddf18cc715afe1ba17dba1d33633)

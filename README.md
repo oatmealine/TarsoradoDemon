@@ -1,35 +1,21 @@
-# Grandpa Demon
-A mod created by ItzKiba.
+# Tarsorado Demon
 
-![Title](resources/readme/difficulties.png)
+A fork of ItzKiba's **Grandpa Demon** mod, but with 21 extra demon difficulties instead of 5, covering almost the entire spectrum of the original demon difficulty image.
 
-## Overview
-The humble Extreme Demon is the highest difficulty in all of Geometry Dash. **However, there is no possible way that Acheron and ACU should be considered the same difficulty.** Think that there should be more demon difficulties above Extreme? Look no further than the **Grandpa Demon mod!**
+![](resources/readme/filter.png)
 
-## Features
-* *Up to 6 new demon difficulties* above Extreme Demon!
-* *All Rated Extremes Demon List* integration for choosing the demon difficulties.
-* *2.2 List support!*
-* ***Grandpa Demon!***
+These are similarly based on [AREDL](https://aredl.pages.dev/#/):
 
+* Top 1 - Final Boss
+* Top 10 - Infinite Demon
+* Top 25 - Ultra Demon
+* Top 50 - Super Demon
+* Top 100 - Mega Demon
+* Top 150 - Golden Demon
 
-**Additionally, the highest demon difficulties each have their own **animated backgrounds** and **particles** for the level page!*
-
-![Demons](resources/readme/demons.png)
-
-## New Demon Difficulties
-The difficulties of extreme demons are chosen based on their positions on the [AREDL](https://aredl.pages.dev/#/).
-
-* Top 500 Demons - *Supreme Demon*
-* Top 250 Demons - *Ultimate Demon*
-* Top 150 Demons - *Legendary Demon*
-* Top 75 Demons - *Mythical Demon*
-* Top 25 Demons - *Infinite Demon*
-* Top 1 Demon - *Grandpa Demon*
-
-***Note:** Grandpa Demon is optional and can be disabled in the mod's settings.*
+The rest is equally distributed across the AREDL rankings, meaning each difficulty will have roughly the same amount of demons (~50 as of writing this).
 
 ## Credits
-* **tcoffa** for creating the original Grandpa Demon sprite
-* **Geode's Discord** for answering my stupid questions
-* **AeonAir** for making me do this out of spite in the first place
+
+* [ItzKiba's Grandpa Demon mod](https://github.com/ItzKiba/GrandpaDemon) for most of the code used
+* [tcoffa's original demon filter image](https://twitter.com/tcoffaVEVO5/status/1738193220188672085) for, well. You know

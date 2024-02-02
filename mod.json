@@ -4,16 +4,16 @@
 	"gd": "2.204",
 	"id": "oatmealine.tarsorado_demon",
 	"name": "Tarsorado Demon",
-	"developer": "oatmealine & ItzKiba",
+	"developer": "oatmealine",
 	"description": "A fork of ItzKiba's Grandpa Demon to add even MORE demon difficulties",
 	"resources": {
 		"spritesheets": {
 			"GrD_IconSheet": [
 				"resources/demons/*.png"
-			],
-			"GrD_ReadmeSheet": [
-				"resources/readme/*.png"
 			]
-		}
+		},
+		"sprites": [
+			"resources/readme/filter.png"
+		]
 	}
 }
